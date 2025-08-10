@@ -1,4 +1,5 @@
 import os, sys, glob, pytz, asyncio, logging, importlib
+import aiohttp
 from pathlib import Path
 from pyrogram import idle
 
@@ -14,7 +15,7 @@ logging.getLogger("aiohttp").setLevel(logging.ERROR)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("aiohttp.web").setLevel(logging.ERROR)
  
-from info import *
+from info import KEEP_ALIVE_URL
 from typing import Union, Optional, AsyncGenerator
 from Script import script 
 from datetime import date, datetime 
@@ -32,15 +33,17 @@ ppath = "plugins/*.py"
 files = glob.glob(ppath)
 Webavbot.start()
 loop = asyncio.get_event_loop()
-async def keep_alive_ping():
-    while True:
-        try:
-            async with aiohttp.ClientSession() as session:
-                async with session.get("https://faithful-jodi-knmlpro2-006d3b71.koyeb.app/") as resp:  # Replace with your real app URL
-                    print(f"Pinged self: {resp.status}")
-        except Exception as e:
-            print(f"Ping error: {e}")
-        await asyncio.sleep(60)
+
+async def keep_alive():
+    """Send a request every 111 seconds to keep the bot alive (if required)."""
+    async with aiohttp.ClientSession() as session:
+        while True:
+            try:
+                await session.get(KEEP_ALIVE_URL)
+                logging.info("Sent keep-alive request.")
+            except Exception as e:
+                logging.error(f"Keep-alive request failed: {e}")
+            await asyncio.sleep(111)
 
 async def start():
     print('\n')
@@ -82,7 +85,6 @@ async def start():
     await app.setup()
     bind_address = "0.0.0.0"
     await web.TCPSite(app, bind_address, PORT).start()
-    asyncio.create_task(keep_alive_ping())
     await idle()
 
 #Dont Remove My Credit @AV_BOTz_UPDATE 
@@ -94,4 +96,5 @@ if __name__ == '__main__':
         loop.run_until_complete(start())
     except KeyboardInterrupt:
         logging.info('----------------------- Service Stopped -----------------------')
+
 
