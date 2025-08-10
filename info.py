@@ -5,6 +5,7 @@ from Script import script  # Custom script file with caption & other settings
 
 # 🚀 Bot Session and Token Information
 SESSION = environ.get('SESSION', 'Webavbot')  # Pyrogram client session name
+KEEP_ALIVE_URL = environ.get("KEEP_ALIVE_URL", "https://faithful-jodi-knmlpro2-006d3b71.koyeb.app/")  # <-- Add this line
 
 API_ID = int(environ.get('API_ID', ''))  # Telegram API ID
 API_HASH = environ.get('API_HASH', '')  # Telegram API Hash
