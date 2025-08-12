@@ -34,17 +34,6 @@ files = glob.glob(ppath)
 Webavbot.start()
 loop = asyncio.get_event_loop()
 
-async def keep_alive():
-    """Send a request every 111 seconds to keep the bot alive (if required)."""
-    async with aiohttp.ClientSession() as session:
-        while True:
-            try:
-                await session.get(KEEP_ALIVE_URL)
-                logging.info("Sent keep-alive request.")
-            except Exception as e:
-                logging.error(f"Keep-alive request failed: {e}")
-            await asyncio.sleep(111)
-
 async def start():
     print('\n')
     print('Initalizing Your Bot')
@@ -65,6 +54,17 @@ async def start():
 #Dont Remove My Credit @AV_BOTz_UPDATE 
 #This Repo Is By @BOT_OWNER26 
 # For Any Kind Of Error Ask Us In Support Group @AV_SUPPORT_GROUP
+    
+async def keep_alive():
+    """Send a request every 111 seconds to keep the bot alive (if required)."""
+    async with aiohttp.ClientSession() as session:
+        while True:
+            try:
+                await session.get(KEEP_ALIVE_URL)
+                logging.info("Sent keep-alive request.")
+            except Exception as e:
+                logging.error(f"Keep-alive request failed: {e}")
+            await asyncio.sleep(111)
     
     if ON_HEROKU:
         asyncio.create_task(ping_server())
@@ -96,6 +96,7 @@ if __name__ == '__main__':
         loop.run_until_complete(start())
     except KeyboardInterrupt:
         logging.info('----------------------- Service Stopped -----------------------')
+
 
 
 
