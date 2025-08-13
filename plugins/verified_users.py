@@ -6,16 +6,16 @@ from datetime import datetime
 
 @Client.on_message(filters.private & filters.command("verified_users") & filters.user(ADMINS))
 async def verified_users_list(client: Client, message: Message):
-    # आज की तारीख (yyyy-mm-dd) के रूप में लो
+    # Take today's date as (yyyy-mm-dd)
     today = datetime.now().strftime("%Y-%m-%d")
 
-    # केवल उन्हीं यूज़र्स को fetch करो जिनका verification आज हुआ है
+    # Fetch only those users who have been verified today
     users = await db.users.find({
         "verification_status.date": today
     }).to_list(length=100)
 
     if not users:
-        return await message.reply_text("❌ आज कोई भी यूज़र verified नहीं हुआ है।")
+        return await message.reply_text("❌ No users have been verified today.")
 
     text = "✅ <b>Today Verified Users:</b>\n\n"
     for user in users:
