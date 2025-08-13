@@ -87,8 +87,6 @@ Nᴀᴍᴇ - {}</b>"""
     AUTH_TXT = """<i><b>Dᴇᴀʀ {}!\n\nPʟᴇᴀsᴇ ᴊᴏɪɴ ᴏᴜʀ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ ᴍᴇ ! 😊\n\nDᴜᴇ ᴛᴏ sᴇʀᴠᴇʀ ᴏᴠᴇʀʟᴏᴀᴅ, ᴏɴʟʏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ sᴜʙsᴄʀɪʙᴇʀs ᴄᴀɴ ᴜsᴇ ᴛʜɪs ʙᴏᴛ !</b></i>"""
     
     CAPTION_TXT = """
-<i><u>𝗬𝗼𝘂𝗿 𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 !</u></i>
-
 <b>📧 ꜰɪʟᴇ ɴᴀᴍᴇ :- </b> <i><a href={}>{}</a></i>
 
 <b><u><i>Tap To Copy Link 👇</u></i></b>
@@ -97,7 +95,7 @@ Nᴀᴍᴇ - {}</b>"""
 
 <b>📥 Download : </b> <code>{}</code>
 
-<b>🚸 Nᴏᴛᴇ : SOME DD, MULTI AUDIO FILES NOT PLAY IN OUR STREAM SO USE VLC PLAYER. \n\nLINK WON'T EXPIRE TILL I DELETE 🤡</b>"""
+<b>🚸 Nᴏᴛᴇ : ꜱᴏᴍᴇ ᴅᴅ, ᴍᴜʟᴛɪ ᴀᴜᴅɪᴏ ꜰɪʟᴇꜱ ɴᴏᴛ ᴘʟᴀʏ ɪɴ ᴏᴜʀ ꜱᴛʀᴇᴀᴍ ꜱᴏ ᴜꜱᴇ ᴠʟᴄ ᴘʟᴀʏᴇʀ. \n\nʟɪɴᴋ ᴡᴏɴ'ᴛ ᴇxᴘɪʀᴇ ᴛɪʟʟ ɪ ᴅᴇʟᴇᴛᴇ 🤡</b>"""
 
     VERIFICATION_TEXT = """<b>👋 ʜᴇʏ {},
 
