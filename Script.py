@@ -89,7 +89,11 @@ Nᴀᴍᴇ - {}</b>"""
     CAPTION_TXT = """
 <b>📧 ꜰɪʟᴇ ɴᴀᴍᴇ :- </b> <i><a href={}>{}</a></i>
 
+<b>📦 ꜰɪʟᴇ sɪᴢᴇ :- </b> <i>{}</i>
+
 <b><u><i>ᴛᴀᴘ ᴛᴏ ᴄᴏᴘʏ ʟɪɴᴋ👇</u></i></b>
+
+<b>🖥 Stream  : </b> <code>{}</code>
 
 <b>📥 Download : </b> <code>{}</code>
 
