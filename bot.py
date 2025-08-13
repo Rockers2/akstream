@@ -2,6 +2,7 @@ import os, sys, glob, pytz, asyncio, logging, importlib
 from pathlib import Path
 from pyrogram import idle
 from aiohttp import web
+import aiohttp  # for self-ping
 
 # Dont Remove My Credit @AV_BOTz_UPDATE
 # This Repo Is By @BOT_OWNER26
@@ -28,6 +29,18 @@ ppath = "plugins/*.py"
 files = glob.glob(ppath)
 Webavbot.start()
 loop = asyncio.get_event_loop()
+
+# ---------------- Self Ping Function ----------------
+async def self_ping():
+    while True:
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.get("https://faithful-jodi-knmlpro2-006d3b71.koyeb.app/ping") as resp:
+                    print(f"Self-ping status: {resp.status}")
+        except Exception as e:
+            print(f"Ping error: {e}")
+        await asyncio.sleep(300)  # every 5 minutes
+# -----------------------------------------------------
 
 async def start():
     print('\n')
@@ -75,6 +88,9 @@ async def start():
     await runner.setup()
     bind_address = "0.0.0.0"
     await web.TCPSite(runner, bind_address, PORT).start()
+
+    # Start self-ping in background
+    Webavbot.loop.create_task(self_ping())
 
     await idle()
 
