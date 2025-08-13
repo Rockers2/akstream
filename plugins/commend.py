@@ -31,8 +31,7 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT.format(me2, user_id, mention))
     if len(message.command) == 1 or message.command[1] == "start":
         buttons = [[
-            InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇᴅ •', url=CHANNEL),
-            InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
+            InlineKeyboardButton('• ʀᴇQᴜᴇꜱᴛ ᴍᴏᴠɪᴇ ꜰɪʟᴇ •', url='https://t.me/movie_request_group_knmlpro2')
         ], [
             InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
             InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
@@ -185,8 +184,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇᴅ •', url=CHANNEL),
-	    InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
+            InlineKeyboardButton('• ʀᴇQᴜᴇꜱᴛ ᴍᴏᴠɪᴇ ꜰɪʟᴇ •', url='https://t.me/movie_request_group_knmlpro2')
         ],[
             InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
             InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
@@ -202,7 +200,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 	    
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('• ᴀᴅᴍɪɴ •', callback_data='admincmd')
+            InlineKeyboardButton('• ᴀᴅᴍɪɴ •', callback_data='https://t.me/knmlpro2_contactbot')
 	],[
 	    InlineKeyboardButton('• ʜᴏᴍᴇ •', callback_data='start'),
 	    InlineKeyboardButton('• ᴄʟᴏsᴇ •', callback_data='close_data')
@@ -246,7 +244,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton(
                     "☆📸 ꜱᴇɴᴅ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ 📸☆",
-                    url=f"https://t.me/{OWNER_USERNAME}"),
+                    url=f"https://t.me/knmlpro2_contactbot"),
             ],[
                 InlineKeyboardButton("• ʙᴀᴄᴋ •", callback_data='premium_info'),
                 InlineKeyboardButton("• ᴄʟᴏꜱᴇ •", callback_data="close_data"),
