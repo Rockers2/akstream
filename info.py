@@ -44,8 +44,8 @@ PUBLIC_FILE_STORE = environ.get('PUBLIC_FILE_STORE', True)  # Public or private 
 BATCH_PROTECT_CONTENT = environ.get('BATCH_PROTECT_CONTENT', False)  # Batch file protection
 
 # 🔗 Shortlink Configuration
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'mdiskshortner.link')  # Shortener site
-SHORTLINK_API = environ.get('SHORTLINK_API', '93db3c048e116653115a28b729151a86c9a78802')  # API key for shortlink
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shortxlinks.com')  # Shortener site
+SHORTLINK_API = environ.get('SHORTLINK_API', '43993eaf574ab786d786f575cb42f38f65607064')  # API key for shortlink
 
 # 💾 MongoDB Connection Information
 DB_URL = environ.get('DATABASE_URI', "")  # MongoDB connection URI
